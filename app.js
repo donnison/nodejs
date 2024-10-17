@@ -14,9 +14,10 @@ const server = http.createServer(app);
 // Initialize Socket.IO with CORS enabled
 const io = socketIo(server, {
     cors: {
-        origin: "*",
+        origin: "*", // Replace with specific domains in production
         methods: ["GET", "POST"],
-    },
+        credentials: true // Optional
+    }
 });
 
 // Middleware
